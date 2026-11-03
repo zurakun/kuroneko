@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Selamat datang di Kurooneko</title>
+<meta name="description" content="Baca manga, manhwa, dan manhua gratis di Kurooneko.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&display=swap">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --paper: #E8ECF2;
+  --panel: #F8F9FB;
+  --ink: #0F1B2D;
+  --muted: #3F4F66;
+  --night: #24344F;
+  --eye: #F4B400;
+  --on-eye: #0F1B2D;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0A101C;
+    --panel: #121B2D;
+    --ink: #E9EDF4;
+    --muted: #A9B6CA;
+    --night: #1A2740;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0A101C;
+  --panel: #121B2D;
+  --ink: #E9EDF4;
+  --muted: #A9B6CA;
+  --night: #1A2740;
+  color-scheme: dark;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 48px);
+}
+.board {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 14px;
+}
+.panel {
+  background: var(--panel);
+  border: 3px solid var(--ink);
+}
+.intro {
+  padding: clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 5.4vw, 3.75rem);
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.lead {
+  margin: 0;
+  max-width: 34em;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  margin-top: 4px;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  background: var(--eye);
+  color: var(--on-eye);
+  border: 3px solid var(--ink);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 0 var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 var(--ink); }
+.btn:active { transform: translate(0, 0); box-shadow: 0 0 0 var(--ink); }
+.btn:focus-visible, .url:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+.url {
+  color: var(--ink);
+  font-weight: 500;
+  text-underline-offset: 4px;
+}
+.cat {
+  background: var(--night);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: 280px;
+}
+.cat svg { display: block; width: 100%; height: auto; }
+.blink { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .blink { animation: blink .5s ease-in-out 1s 1; }
+}
+@keyframes blink { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.08); } }
+
+.formats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.formats section { padding: clamp(20px, 3vw, 32px); }
+.formats section + section { border-left: 3px solid var(--ink); }
+.formats h2 { margin: 0 0 6px; font-size: 1.375rem; font-weight: 900; letter-spacing: -0.01em; }
+.formats p { margin: 0; color: var(--muted); font-size: 1rem; }
+
+footer {
+  margin-top: 28px;
+  padding-bottom: 8px;
+  font-size: .9375rem;
+  color: var(--muted);
+}
+footer strong { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 760px) {
+  .board { grid-template-columns: 1fr; }
+  .cat { min-height: 0; }
+  .formats { grid-template-columns: 1fr; }
+  .formats section + section { border-left: 0; border-top: 3px solid var(--ink); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <main class="board">
+    <div class="panel intro">
+      <h1><span id="sapa">Halo</span>, selamat datang di Kurooneko.</h1>
+      <p class="lead">Tempat membaca manga, manhwa, dan manhua secara gratis, tanpa iklan yang mengganggu.</p>
+      <div class="actions">
+        <a class="btn" href="https://kurooneko.biz.id" target="_blank" rel="noopener">Buka Kurooneko</a>
+        <a class="url" href="https://kurooneko.biz.id" target="_blank" rel="noopener">kurooneko.biz.id</a>
+      </div>
+    </div>
+
+    <div class="panel cat" role="img" aria-label="Ilustrasi kucing hitam bermata kuning di bawah bulan">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="318" cy="68" r="34" fill="#DCE3EE"/>
+        <polygon points="92,150 104,34 182,104" fill="#05080F"/>
+        <polygon points="308,150 296,34 218,104" fill="#05080F"/>
+        <ellipse cx="200" cy="320" rx="175" ry="105" fill="#05080F"/>
+        <ellipse cx="200" cy="190" rx="132" ry="108" fill="#05080F"/>
+        <g class="blink">
+          <ellipse cx="148" cy="184" rx="27" ry="20" fill="#F4B400"/>
+          <ellipse cx="148" cy="184" rx="5" ry="17" fill="#05080F"/>
+        </g>
+        <g class="blink">
+          <ellipse cx="252" cy="184" rx="27" ry="20" fill="#F4B400"/>
+          <ellipse cx="252" cy="184" rx="5" ry="17" fill="#05080F"/>
+        </g>
+        <polygon points="190,224 210,224 200,236" fill="#3A4A66"/>
+        <g stroke="#6F82A3" stroke-width="2" stroke-linecap="round">
+          <line x1="128" y1="236" x2="48" y2="224"/>
+          <line x1="128" y1="246" x2="52" y2="254"/>
+          <line x1="272" y1="236" x2="352" y2="224"/>
+          <line x1="272" y1="246" x2="348" y2="254"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="panel formats">
+      <section>
+        <h2>Manga</h2>
+        <p>Komik dari Jepang, dibaca dari kanan ke kiri.</p>
+      </section>
+      <section>
+        <h2>Manhwa</h2>
+        <p>Komik dari Korea, umumnya berwarna dan dibaca dengan menggulir ke bawah.</p>
+      </section>
+      <section>
+        <h2>Manhua</h2>
+        <p>Komik dari Tiongkok, dengan ragam genre dari aksi sampai romansa.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="tahun">2026</span> <strong>Fahmi Coenubia</strong>. Semua hak dilindungi.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var now = new Date();
+  var h = now.getHours();
+  var sapa = h >= 4 && h < 11 ? "Selamat pagi"
+           : h >= 11 && h < 15 ? "Selamat siang"
+           : h >= 15 && h < 18 ? "Selamat sore"
+           : "Selamat malam";
+  var a = document.getElementById("sapa");
+  var t = document.getElementById("tahun");
+  if (a) a.textContent = sapa;
+  if (t) t.textContent = now.getFullYear();
+})();
+</script>
+</body>
+</html>
