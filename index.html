@@ -1,3 +1,7 @@
+Claude
+
+
+Sapaan kurooneko · HTML
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -50,7 +54,7 @@ body {
 .page { max-width: 1040px; margin: 0 auto; padding: clamp(16px, 4vw, 48px); }
 .board { display: grid; grid-template-columns: 7fr 5fr; gap: 14px; }
 .panel { background: var(--panel); border: 3px solid var(--ink); }
-
+ 
 .intro {
   padding: clamp(24px, 4vw, 48px);
   display: flex; flex-direction: column; justify-content: center; gap: 20px;
@@ -75,7 +79,7 @@ h1 {
 .btn:active { transform: none; box-shadow: 0 0 0 var(--ink); }
 .btn:focus-visible, .url:focus-visible, .cat:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .url { color: var(--ink); font-weight: 500; text-underline-offset: 4px; }
-
+ 
 /* ===== Kucing ===== */
 .cat {
   position: relative;
@@ -106,27 +110,27 @@ h1 {
   pointer-events: none;
 }
 .sfx.on { opacity: 1; transform: scale(1) rotate(-6deg); }
-
+ 
 .eye { transform-box: fill-box; transform-origin: center; }
 .eye.shut { transform: scaleY(.08); transition: transform .08s ease; }
 .pupil-move, .iris-move, #look { transition: transform .09s linear; }
 .pupil { transform-box: fill-box; transform-origin: center; transition: transform .1s ease; }
 .happy-eyes, .cheek-on, .mouth-open { display: none; }
 .cheek { opacity: 0; transition: opacity .2s ease; }
-
+ 
 svg[data-state="happy"] .eyes { display: none; }
 svg[data-state="happy"] .happy-eyes { display: inline; }
 svg[data-state="happy"] .cheek { opacity: .8; }
 svg[data-state="pounce"] .pupil { transform: scaleX(2.8); }
 svg[data-state="pounce"] .mouth-open { display: inline; }
 svg[data-state="pounce"] .mouth-closed { display: none; }
-
+ 
 #lunge { transform-origin: 200px 250px; }
 svg[data-state="happy"] #lunge { animation: sway .55s ease-in-out infinite alternate; }
 #lunge.go { animation: lunge .85s cubic-bezier(.2,.8,.3,1) 1; }
 .paw-in { opacity: 0; }
 .paw-in.go { animation: swipe .8s ease-out 1; }
-
+ 
 @keyframes sway { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
 @keyframes lunge {
   0%   { transform: translate(0,0) scale(1); }
@@ -144,16 +148,16 @@ svg[data-state="happy"] #lunge { animation: sway .55s ease-in-out infinite alter
   #lunge.go, .paw-in.go, svg[data-state="happy"] #lunge { animation: none; }
   .pupil-move, .iris-move, #look, .pupil, .eye.shut, .sfx { transition: none; }
 }
-
+ 
 .formats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); }
 .formats section { padding: clamp(20px, 3vw, 32px); }
 .formats section + section { border-left: 3px solid var(--ink); }
 .formats h2 { margin: 0 0 6px; font-size: 1.375rem; font-weight: 900; letter-spacing: -0.01em; }
 .formats p { margin: 0; color: var(--muted); font-size: 1rem; }
-
+ 
 footer { margin-top: 28px; padding-bottom: 8px; font-size: .9375rem; color: var(--muted); }
 footer strong { color: var(--ink); font-weight: 700; }
-
+ 
 @media (max-width: 760px) {
   .board { grid-template-columns: 1fr; }
   .cat { min-height: 0; }
@@ -173,19 +177,19 @@ footer strong { color: var(--ink); font-weight: 700; }
         <a class="url" href="https://kurooneko.biz.id" target="_blank" rel="noopener">kurooneko.biz.id</a>
       </div>
     </div>
-
+ 
     <div class="panel cat" id="cat" tabindex="0" role="button" aria-label="Kucing hitam. Tekan untuk membuatnya menerkam.">
       <div class="sfx" id="sfx" aria-hidden="true"></div>
       <svg id="catsvg" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-state="idle">
         <circle cx="318" cy="68" r="34" fill="#DCE3EE"/>
         <ellipse cx="200" cy="320" rx="175" ry="105" fill="#05080F"/>
-
+ 
         <g id="lunge">
           <g id="look">
             <polygon points="92,150 104,34 182,104" fill="#05080F"/>
             <polygon points="308,150 296,34 218,104" fill="#05080F"/>
             <ellipse cx="200" cy="190" rx="132" ry="108" fill="#05080F"/>
-
+ 
             <g class="eyes">
               <g class="eye" id="eyeL">
                 <g class="iris-move"><ellipse cx="148" cy="184" rx="27" ry="20" fill="#F4B400"/></g>
@@ -200,10 +204,10 @@ footer strong { color: var(--ink); font-weight: 700; }
               <path d="M122 194 Q148 162 174 194"/>
               <path d="M226 194 Q252 162 278 194"/>
             </g>
-
+ 
             <ellipse class="cheek" cx="110" cy="224" rx="17" ry="9" fill="#E8788A"/>
             <ellipse class="cheek" cx="290" cy="224" rx="17" ry="9" fill="#E8788A"/>
-
+ 
             <polygon points="190,224 210,224 200,236" fill="#3A4A66"/>
             <path class="mouth-closed" d="M200 236 L200 244 M200 244 Q190 254 180 246 M200 244 Q210 254 220 246" fill="none" stroke="#6F82A3" stroke-width="2.5" stroke-linecap="round"/>
             <g class="mouth-open">
@@ -211,7 +215,7 @@ footer strong { color: var(--ink); font-weight: 700; }
               <polygon points="187,242 194,242 190,254" fill="#fff"/>
               <polygon points="206,242 213,242 210,254" fill="#fff"/>
             </g>
-
+ 
             <g stroke="#6F82A3" stroke-width="2" stroke-linecap="round">
               <line x1="128" y1="236" x2="48" y2="224"/>
               <line x1="128" y1="246" x2="52" y2="254"/>
@@ -220,7 +224,7 @@ footer strong { color: var(--ink); font-weight: 700; }
             </g>
           </g>
         </g>
-
+ 
         <g id="paw" transform="translate(200,160)">
           <g class="paw-in" id="pawin">
             <g stroke="#DCE3EE" stroke-width="3.5" stroke-linecap="round">
@@ -241,7 +245,7 @@ footer strong { color: var(--ink); font-weight: 700; }
       </svg>
       <p class="hint">Gerakkan kursor, elus kepalanya, atau klik kucingnya.</p>
     </div>
-
+ 
     <div class="panel formats">
       <section>
         <h2>Manga</h2>
@@ -257,12 +261,12 @@ footer strong { color: var(--ink); font-weight: 700; }
       </section>
     </div>
   </main>
-
+ 
   <footer>
     <span>&copy; <span id="tahun">2026</span> <strong>Fahmi Coenubia</strong>. Semua hak dilindungi.</span>
   </footer>
 </div>
-
+ 
 <script>
 (function () {
   /* Sapaan sesuai jam */
@@ -271,7 +275,7 @@ footer strong { color: var(--ink); font-weight: 700; }
            : h >= 15 && h < 18 ? "Selamat sore" : "Selamat malam";
   document.getElementById("sapa").textContent = sapa;
   document.getElementById("tahun").textContent = now.getFullYear();
-
+ 
   /* Kucing */
   var cat = document.getElementById("cat");
   var svg = document.getElementById("catsvg");
@@ -286,7 +290,7 @@ footer strong { color: var(--ink); font-weight: 700; }
   ];
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var state = "idle", sfxTimer, happyTimer, pounceTimer, strokeTimer;
-
+ 
   function setState(s) { state = s; svg.setAttribute("data-state", s); }
   function say(text, ms) {
     sfx.textContent = text; sfx.classList.add("on");
@@ -298,7 +302,7 @@ footer strong { color: var(--ink); font-weight: 700; }
     return { x: (e.clientX - r.left) * 400 / r.width, y: (e.clientY - r.top) * 320 / r.height };
   }
   function restart(el) { el.classList.remove("go"); void el.getBoundingClientRect(); el.classList.add("go"); }
-
+ 
   /* Mata mengikuti kursor atau jari */
   function track(e) {
     var p = toSvg(e);
@@ -317,7 +321,7 @@ footer strong { color: var(--ink); font-weight: 700; }
     document.querySelectorAll(".pupil-move,.iris-move").forEach(function (n) { n.style.transform = ""; });
     look.style.transform = "";
   });
-
+ 
   /* Berkedip acak */
   if (!reduce) {
     (function blink() {
@@ -330,7 +334,7 @@ footer strong { color: var(--ink); font-weight: 700; }
       }, 2500 + Math.random() * 3500);
     })();
   }
-
+ 
   /* Dielus: gerakan bolak-balik di atas kepala */
   var lastX = null, lastY = 0, dist = 0;
   svg.addEventListener("pointermove", function (e) {
@@ -346,7 +350,7 @@ footer strong { color: var(--ink); font-weight: 700; }
     }
   });
   svg.addEventListener("pointerleave", function () { lastX = null; });
-
+ 
   /* Diklik atau dipukul: menerkam */
   var downX = 0, downY = 0, moved = false;
   cat.addEventListener("pointerdown", function (e) { downX = e.clientX; downY = e.clientY; moved = false; });
@@ -377,3 +381,4 @@ footer strong { color: var(--ink); font-weight: 700; }
 </script>
 </body>
 </html>
+ 
